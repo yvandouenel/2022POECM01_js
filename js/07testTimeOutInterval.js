@@ -19,7 +19,7 @@ setInterval(() => {
   }, 1000 * i)
 } */
 
-function dumpI(i) {
+/* function dumpI(i) {
   setTimeout(() => {
     console.log(`i : `, i);
     i++;
@@ -27,4 +27,13 @@ function dumpI(i) {
 
   }, 1000)
 }
-dumpI(1);
+dumpI(1); */
+
+let i = 1;
+const interval_id = setInterval(() => {
+  console.log(`i : `, i);
+  i++;
+  if (i == 3) clearInterval(interval_id);
+}, 1000);
+
+

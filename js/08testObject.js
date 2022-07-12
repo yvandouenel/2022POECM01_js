@@ -12,3 +12,9 @@ console.log(`bob : `, bob);
 console.log(bob.firstname);
 bob["introduceMySelf"]();
 
+
+for (let key in bob) {
+  console.log(key);
+  console.log(bob[key]);
+}
+

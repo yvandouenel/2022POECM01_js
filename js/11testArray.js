@@ -1,5 +1,6 @@
 const fruits = [
   "banane",
+  "fruit de la passion",
   "orange",
   "kiwi"
 ];
@@ -17,6 +18,18 @@ fruits.forEach((fruit, index) => {
 
 const fruits_li = fruits.map(fruit => `<li>${fruit}</li>`);
 console.log(`fruits `, fruits);
-console.log(`fruits_li `, fruits_li);
 
-// utiliser filter pour ne garder que les fruits dont l'index est paire
+// utiliser filter pour ne garder que les fruits dont l'index est pair
+
+const fruits_pairs = fruits.filter((fruit, index) => index % 2 == 0);
+console.log(`fruits_pairs`, fruits_pairs);
+
+const fruits_impairs = fruits.filter((fruit, index) => {
+  return index % 2 != 0;
+});
+console.log(`fruits_impairs`, fruits_impairs);
+// Classer du fruit qui comporte le moins de caractères à celui qui en comporte le plus
+fruits.sort((a, b) => a.length - b.length);
+console.log(`fruits classé part taille de chaîne  `, fruits);
+
+

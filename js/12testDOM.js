@@ -1,3 +1,34 @@
+/**
+ * Crée un élément du DOM et le retourne
+ * @param {String} markupname 
+ * @param {String} text 
+ * @param {DomElement} parent 
+ * @param {Array} attributes
+ * @return {DomElement}
+ */
+function createDOMElement(markupname, text, parent, attributes) {
+  const dom_element = document.createElement(markupname);
+  dom_element.textContent = text;
+  parent.appendChild(dom_element);
+
+  attributes.forEach((attribute => {
+    if (attribute.name && attribute.value) {
+      dom_element.setAttribute(attribute.name, attribute.value);
+    }
+  }))
+  return dom_element;
+}
+
+createDOMElement(
+  "p",
+  "texte",
+  document.body,
+  [
+    { name: "class", value: "toto" },
+    { name: "id", value: "titi" },
+    { name: "lang", value: "fr" }
+  ]);
+
 // Récupération d'un élément du dom
 
 let h1 = document.getElementById("h1");
